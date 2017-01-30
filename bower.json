@@ -1,0 +1,16 @@
+{
+  "name": "anuarbek",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Anuarbek Zakiryanov <anuarbekzakirianov97@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "slick-carousel": "^1.6.0",
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2"
+  }
+}
