@@ -14,7 +14,6 @@
     <!-----------------------  CSS ------------------------->
     <link rel="stylesheet" href="font-awesome.css">
     <link rel="stylesheet" href="index.css">
-
     <!--bower:css-->
     <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
@@ -25,7 +24,7 @@
 <body>
     <a href="" class="scrollToTop"><span>&#x276e;</span></a>
     <header class="header">
-        <h2 class="logo">Super Chasi</h2>
+        <h2 class="logo">CHILDWATCH</h2>
         <div class="phone-section">
             <i class="fa fa-phone"></i>
             <span>​+7 747 166 3090</span>
@@ -165,10 +164,20 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
+        <div class="section section_6">
+            <i class="icon fa fa-exclamation-circle"></i>
+            <h3 class="title">Ежегодно в Казахстане теряется около 10 000 детей</h3>
+            <p class="text">Чуть ли не каждый день мы читаем в новостях о том что где то пропал или убежал ребенок.
+                Это ужасно... А еще ужасней то, что 6% из этих детей пропадают навсегда.
+                Ребенок может потеряться на ровном месте, на улице, в людных местах, на базаре
+                или в торговом центре. Малыш может заблудиться, убежать играть на стройку, железную
+                дорогу или в горы, упасть в открытый люк, и, наконец, самое ужасное то что,
+                никто не застрахован от похищений</p>
+        </div>
         <div class="section section_4">
             <h3 class="title">
-                Почему люди покупают Wonlex?
+                Будьте спокойны за своих детей вместе с Wonlex!
             </h3>
             <div class="section_4_content" >
                 <div class="left-col icon wow slideInLeft" data-wow-duration="1s">
@@ -229,19 +238,17 @@
 
     <!--MODAL-->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&#10006;</span>
-
             </div>
             <div class="modal-body">
                     <h2 class="title">Заполните форму,что бы мы смогли с вами связаться</h2>
                     <input type="text" id="clientName" placeholder="Ваше имя">
                     <br>
                     <input type="text" id="clientPhone" placeholder="Номер сотового телефона">
-                    <p class="error">Пожалуйста заполните поля</p>
+                    <p class="error">Пожалуйста заполните пуcтые поля</p>
                     <button type="button" id="sendToMail" class="pink-button">Получить часы!</button>
             </div>
             <div class="congrats">
@@ -272,6 +279,29 @@
 <!--<script src="index.js"></script>-->
 <script>
     $(document).ready(function(){
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+
+        $(".close").click(function () {
+            closeModal();
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+            $(".modal-body").show();
+            $(".congrats").hide();
+        }
+
         $("#sendToMail").click(function (e) {
             e.preventDefault();
             var data = {};
@@ -298,7 +328,11 @@
         });
 
         $('.slider').slick({
-            autoplay:true
+            autoplay:true,
+            autoplaySpeed: 1500,
+            prevArrow: false,
+            nextArrow: false,
+            speed: 2000
         });
 
         $('.scrollToTop').fadeOut(0);
@@ -309,7 +343,7 @@
                 $('.scrollToTop').fadeOut();
             }
 
-            if($(this).scrollTop()>20){
+            if($(this).scrollTop()>5){
                 $(".header").addClass('scroll').fadeIn('slow');
                 $('.main-content').css('margin-top','60px');
             }else{
@@ -337,20 +371,7 @@
         wow.init();
 
 //        MODAL
-        var modal = document.getElementById('myModal');
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+
     });
 </script>
 </body>
