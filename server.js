@@ -8,6 +8,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
+var nodemailer = require('nodemailer');
 var app = express();
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 if(env === 'development'){
@@ -41,6 +42,33 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
+
+
+app.post('/endpoint',function (req,res) {
+	var transport = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			user: 'anuarbekzakirianov97@gmail.com',
+			pass: 'a********'
+		}
+	});
+
+	var mailOptions = {
+		from: 'anuarbekzakirianov97@gmail.com', // sender address
+		to: 'anuarbekzakirianov97@gmail.com', // list of receivers
+		subject: 'Часы', // Subject line
+		text: "Пришел заказ на часы от " + req.body.name + ". Номер " + req.body.phone
+	};
+
+	transport.sendMail(mailOptions, function (error) {
+		if (error) {
+			console.log('Error occured');
+			console.log(error.message);
+			return;
+		}
+		res.send({"success": "success"});
+	});
+});
 
 // Start server
 

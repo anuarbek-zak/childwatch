@@ -52,7 +52,7 @@
                             <p class="about-text">SIM карта в подарок</p>
                         </li>
                     </ul>
-                    <button class="pink-button">Подробнее</button>
+                    <button id="myBtn" class="pink-button">Заказать</button>
                 </div>
             </div>
         </div>
@@ -227,6 +227,38 @@
     </footer>
 
 
+    <!--MODAL-->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&#10006;</span>
+
+            </div>
+            <div class="modal-body">
+                    <h2 class="title">Заполните форму,что бы мы смогли с вами связаться</h2>
+                    <input type="text" id="clientName" placeholder="Ваше имя">
+                    <br>
+                    <input type="text" id="clientPhone" placeholder="Номер сотового телефона">
+                    <p class="error">Пожалуйста заполните поля</p>
+                    <button type="button" id="sendToMail" class="pink-button">Получить часы!</button>
+            </div>
+            <div class="congrats">
+                Спасибо за заказ!
+                <br>
+                Мы обязательно свяжемся с вами!
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
 
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -237,12 +269,36 @@
 <!-------------------- JS  -------------------->
 <!--<script src="index.module.js"></script>-->
 <!--<script src="index.route.js"></script>-->
-<script src="index.js"></script>
+<!--<script src="index.js"></script>-->
 <script>
     $(document).ready(function(){
+        $("#sendToMail").click(function (e) {
+            e.preventDefault();
+            var data = {};
+            data.name = $("#clientName").val();
+            data.phone = $("#clientPhone").val();
+            if(data.name==""||data.phone=="") {
+                $(".error").show();
+                return;
+            }
+            console.log("data",data);
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:3000/endpoint',
+                data: data,
+                success: function(data) {
+                    console.log('success');
+                    console.log(JSON.stringify(data));
+                }
+            });
+
+            $(".modal-body").hide();
+            $(".congrats").show();
+            return false;
+        });
+
         $('.slider').slick({
             autoplay:true
-
         });
 
         $('.scrollToTop').fadeOut(0);
@@ -252,6 +308,16 @@
             } else {
                 $('.scrollToTop').fadeOut();
             }
+
+            if($(this).scrollTop()>20){
+                $(".header").addClass('scroll').fadeIn('slow');
+                $('.main-content').css('margin-top','60px');
+            }else{
+                $(".header").removeClass('scroll').fadeIn('slow');
+                $('.main-content').css('margin-top','0px');
+            }
+
+
         });
         $('.scrollToTop').click(function(){
             $('html, body').animate({scrollTop : 0},500);
@@ -270,6 +336,21 @@
         );
         wow.init();
 
+//        MODAL
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     });
 </script>
 </body>

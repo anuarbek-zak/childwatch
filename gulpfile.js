@@ -2,7 +2,7 @@
 
 var gulp  = require('gulp'),
     concatCss = require('gulp-concat-css'),
-    minifyCSS = require('gulp-minify-css'),
+    // minifyCSS = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer'),
     less = require('gulp-less'),
     del = require('del'),
@@ -47,7 +47,7 @@ gulp.task('styles',function () {
            this.emit('end');
        })
        .pipe(concatCss("index.css"))
-       .pipe(minifyCSS())
+       // .pipe(minifyCSS())
        .pipe(gulp.dest('public'))
    ]);
 
