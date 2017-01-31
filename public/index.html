@@ -22,12 +22,12 @@
 </head>
 
 <body>
-    <a href="" class="scrollToTop"><span>&#x276e;</span></a>
+    <a href="" class="scrollToTop shake"><i class="fa fa-phone"></i></a>
     <header class="header">
-        <h2 class="logo">CHILDWATCH</h2>
+        <img class="logo" src="assets/img/logo.png" alt="">
         <div class="phone-section">
             <i class="fa fa-phone"></i>
-            <span>​+7 747 166 3090</span>
+            <span>​+7 702 7837 080</span>
         </div>
     </header>
     <div class="main-content">
@@ -70,7 +70,7 @@
                     <p class="descr">Сенсорный экран, WIFI</p>
                     <p class="price">18 990 тг.</p>
                 </div>
-                <div  class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                <div class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                     <div class="title">Wonlex GPS Watch GW700</div>
                     <img class="clock-img" src="assets/img/section2_img3.jpg.jpg" alt="часы">
                     <p class="descr">Детские часы с GPS-трекером для подростков</p>
@@ -196,6 +196,9 @@
                 </div>
             </div>
         </div>
+        <div class="section section_7">
+
+        </div>
         <div class="section section_5">
             <h3 class="title">Отзывы</h3>
             <div class="section_5_content">
@@ -247,7 +250,7 @@
                     <h2 class="title">Заполните форму,что бы мы смогли с вами связаться</h2>
                     <input type="text" id="clientName" placeholder="Ваше имя">
                     <br>
-                    <input type="text" id="clientPhone" placeholder="Номер сотового телефона">
+                    <input type="number" id="clientPhone" placeholder="Номер сотового телефона">
                     <p class="error">Пожалуйста заполните пуcтые поля</p>
                     <button type="button" id="sendToMail" class="pink-button">Получить часы!</button>
             </div>
@@ -283,14 +286,14 @@
         var btn = document.getElementById("myBtn");
 
         btn.onclick = function() {
-            modal.style.display = "block";
+            openModal();
         };
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        };
+        $('.scrollToTop').click(function(){
+            openModal();
+            return false;
+        });
+
 
         $(".close").click(function () {
             closeModal();
@@ -301,6 +304,21 @@
             $(".modal-body").show();
             $(".congrats").hide();
         }
+
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        setInterval(function () {
+            $(".scrollToTop").toggleClass("shake");
+        },2000);
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+
 
         $("#sendToMail").click(function (e) {
             e.preventDefault();
@@ -335,17 +353,11 @@
             speed: 2000
         });
 
-        $('.scrollToTop').fadeOut(0);
         $(window).scroll(function(){
-            if ($(this).scrollTop() > 500) {
-                $('.scrollToTop').fadeIn();
-            } else {
-                $('.scrollToTop').fadeOut();
-            }
-
             if($(this).scrollTop()>5){
+                var height = $(".header").outerHeight();
                 $(".header").addClass('scroll').fadeIn('slow');
-                $('.main-content').css('margin-top','60px');
+                $('.main-content').css('margin-top',height+'px');
             }else{
                 $(".header").removeClass('scroll').fadeIn('slow');
                 $('.main-content').css('margin-top','0px');
@@ -353,10 +365,6 @@
 
 
         });
-        $('.scrollToTop').click(function(){
-            $('html, body').animate({scrollTop : 0},500);
-            return false;
-        }).blur();
 
         var wow = new WOW(
                 {
@@ -369,9 +377,6 @@
                 }
         );
         wow.init();
-
-//        MODAL
-
     });
 </script>
 </body>
