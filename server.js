@@ -49,7 +49,7 @@ app.post('/endpoint',function (req,res) {
 		service: 'gmail',
 		auth: {
 			user: 'almakhan1maksat@gmail.com',
-			pass: '2886213Maks'
+			pass: '2886213Maksat'
 		}
 	});
 
