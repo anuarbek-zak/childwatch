@@ -327,11 +327,16 @@
             console.log("data",data);
             $.ajax({
                 type: 'POST',
-                url: 'http://clocklp2.herokuapp.com/endpoint',
+                url: 'http://localhost:3000/endpoint',
                 data: data,
                 success: function(data) {
                     console.log('success');
                     console.log(JSON.stringify(data));
+                },
+                error: function(xhr, status, error) {
+                   console.log("xhr ",xhr);
+                   console.log("status ",status);
+                   console.log("error ",error);
                 }
             });
 
