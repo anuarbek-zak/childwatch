@@ -9,6 +9,7 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 if(env === 'development'){
@@ -45,13 +46,13 @@ app.use(bodyParser.json());
 
 
 app.post('/endpoint',function (req,res) {
-	var transport = nodemailer.createTransport({
+	var transport = nodemailer.createTransport(smtpTransport({
 		service: 'gmail',
 		auth: {
 			user: 'anuarbekzakirianov97@gmail.com',
 			pass: 'a********'
 		}
-	});
+	}));
 
 	var mailOptions = {
 		from: 'anuarbekzakirianov97@gmail.com', // sender address
