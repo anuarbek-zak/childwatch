@@ -1,0 +1,4 @@
+frontend
+.idea/
+.tmp/
+.DS_Store
