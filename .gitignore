@@ -1,4 +1,5 @@
-frontend
+frontned/
 .idea/
 .tmp/
+dist/
 .DS_Store

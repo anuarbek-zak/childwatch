@@ -44,7 +44,7 @@ app.use(bodyParser.json());
 
 
 
-app.post('http://clocklp2.herokuapp.com/endpoint',function (req,res) {
+app.post('/endpoint',function (req,res) {
 	var transport = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
