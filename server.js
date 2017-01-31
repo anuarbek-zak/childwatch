@@ -48,14 +48,14 @@ app.post('/endpoint',function (req,res) {
 	var transport = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: 'anuarbekzakirianov97@gmail.com',
-			pass: 'a********'
+			user: 'almakhan1maksat@gmail.com',
+			pass: '2886213Maks'
 		}
 	});
 
 	var mailOptions = {
-		from: 'anuarbekzakirianov97@gmail.com', // sender address
-		to: 'anuarbekzakirianov97@gmail.com', // list of receivers
+		from: 'almakhan1maksat@gmail.com', // sender address
+		to: 'almakhan1maksat@gmail.com', // list of receivers
 		subject: 'Часы', // Subject line
 		text: "Пришел заказ на часы от " + req.body.name + ". Номер " + req.body.phone
 	};
