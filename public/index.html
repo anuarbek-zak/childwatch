@@ -24,7 +24,10 @@
 <body>
     <a href="" class="scrollToTop shake"><i class="fa fa-phone"></i></a>
     <header class="header">
-        <img class="logo" src="assets/img/logo.png" alt="">
+        <img class="logo" src="assets/img/logo.png" alt="logo">
+        <p class="header_text">
+            Официальный дилер умных часов в Казахстане
+        </p>
         <div class="phone-section">
             <i class="fa fa-phone"></i>
             <span>​+7 702 7837 080</span>
@@ -62,37 +65,32 @@
                     <div class="title">Smart Baby Watch Q50</div>
                     <img class="clock-img" src="assets/img/section2_img1.jpg" alt="часы">
                     <p class="descr">Детские часы с GPS-трекером, низкая цена</p>
-                    <p class="price">13 490 тг.</p>
+                    <p class="sale">Скидка 40%!</p>
+                    <div class="price">
+                        <p class="price_original">33 725 тг.</p>
+                        <p class="price_sale">13 490 тг.</p>
+                    </div>
+
                 </div>
                 <div  class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                     <div class="title">Wonlex GW100 GPS</div>
                     <img class="clock-img" src="assets/img/section2_img2.jpg" alt="часы">
                     <p class="descr">Сенсорный экран, WIFI</p>
-                    <p class="price">18 990 тг.</p>
+                    <p class="sale">Скидка 35%!</p>
+                    <div class="price">
+                        <p class="price_original">47 475 тг.</p>
+                        <p class="price_sale">18 990 тг.</p>
+                    </div>
                 </div>
                 <div class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                     <div class="title">Wonlex GPS Watch GW700</div>
                     <img class="clock-img" src="assets/img/section2_img3.jpg.jpg" alt="часы">
                     <p class="descr">Детские часы с GPS-трекером для подростков</p>
-                    <p class="price">19 990 тг.</p>
-                </div>
-                <div  class="clock wow fadeInUp" data-wow-duration="1s">
-                    <div class="title">GW200S</div>
-                    <img class="clock-img" src="assets/img/section2_img4.jpg" alt="часы">
-                    <p class="descr">Сенсор, магнитная зарядка.</p>
-                    <p class="price">22 990 тг.</p>
-                </div>
-                <div  class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                    <div class="title">GW1000</div>
-                    <img class="clock-img" src="assets/img/section2_img5.jpg" alt="часы" >
-                    <p class="descr">Сенсорный экран, камера</p>
-                    <p class="price">24 990 тг.</p>
-                </div>
-                <div  class="clock wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                    <div class="title">Wonlex GPS Watch EW100</div>
-                    <img class="clock-img" src="assets/img/section2_img6.jpg" alt="часы">
-                    <p class="descr">Для взрослых и подростков</p>
-                    <p class="price">26 000 тг.</p>
+                    <p class="sale">Скидка 35%!</p>
+                    <div class="price">
+                        <p class="price_original">49 975 тг.</p>
+                        <p class="price_sale">19 990 тг.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,16 +194,15 @@
                 </div>
             </div>
         </div>
-        <div class="section section_7">
-
-        </div>
         <div class="section section_5">
             <h3 class="title">Отзывы</h3>
             <div class="section_5_content">
                 <div class="slider">
                     <div>
                         <div class="slide">
-                            <div class="slide_img"></div>
+                            <div class="slide_img">
+                                <img src="assets/img/men.jpg" alt="">
+                            </div>
                             <div class="slide_text">
                                 <h4 class="title">Мужик</h4>
                                 <p class="descr">В восторге от этих часов, теперь спокоен за свою дочь</p>
@@ -214,7 +211,9 @@
                     </div>
                     <div>
                         <div class="slide">
-                            <div class="slide_img"></div>
+                            <div class="slide_img">
+                                <img src="assets/img/men.jpg" alt="">
+                            </div>
                             <div class="slide_text">
                                 <h4 class="title">Мужик</h4>
                                 <p class="descr">В восторге от этих часов, теперь спокоен за свою дочь</p>
@@ -223,7 +222,9 @@
                     </div>
                     <div>
                         <div class="slide">
-                            <div class="slide_img"></div>
+                            <div class="slide_img">
+                                <img src="assets/img/men.jpg" alt="">
+                            </div>
                             <div class="slide_text">
                                 <h4 class="title">Мужик</h4>
                                 <p class="descr">В восторге от этих часов, теперь спокоен за свою дочь</p>
@@ -235,7 +236,15 @@
         </div>
     </div>
     <footer class="footer">
-
+        <p class="footer_copy">Все права защищены 2017 &copy;</p>
+        <img src="assets/img/logo.png" alt="logo" class="logo">
+        <div class="footer_phones">
+            <span>Контакты: </span>
+            <div>
+                <p class="footer_phone">+7 702 7837 080</p>
+                <p class="footer_phone">+7 702 7837 080</p>
+            </div>
+        </div>
     </footer>
 
 
@@ -285,6 +294,8 @@
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("myBtn");
 
+        scrollableHeader();
+
         btn.onclick = function() {
             openModal();
         };
@@ -318,7 +329,6 @@
                 closeModal();
             }
         };
-
 
         $("#sendToMail").click(function (e) {
             e.preventDefault();
@@ -359,17 +369,19 @@
         });
 
         $(window).scroll(function(){
-            if($(this).scrollTop()>5){
+           scrollableHeader();
+        });
+
+        function scrollableHeader() {
+            if($(window).scrollTop()>5){
                 var height = $(".header").outerHeight();
-                $(".header").addClass('scroll').fadeIn('slow');
+                $(".header").addClass('scroll').fadeIn("slow");
                 $('.main-content').css('margin-top',height+'px');
             }else{
-                $(".header").removeClass('scroll').fadeIn('slow');
+                $(".header").removeClass('scroll').fadeIn("slow");
                 $('.main-content').css('margin-top','0px');
             }
-
-
-        });
+        };
 
         var wow = new WOW(
                 {

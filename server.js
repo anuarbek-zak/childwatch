@@ -56,7 +56,7 @@ app.post('/endpoint',function (req,res) {
 
 	var mailOptions = {
 		from: 'childwatchkz@gmail.com', // sender address
-		to: 'anuarbekzakirianov97@gmail.com', // list of receivers
+		to: 'almakhan1maksat@gmail.com', // list of receivers
 		subject: 'Часы', // Subject line
 		text: "Пришел заказ на часы от " + req.body.name + ". Номер " + req.body.phone
 	};
