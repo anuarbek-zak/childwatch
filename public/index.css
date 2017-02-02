@@ -920,6 +920,21 @@ body {
     -ms-flex-align: center;
     align-items: center;
   }
+
+  .section_8_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .section_8_content .arrow {
+    display: none;
+  }
+
+  .section_8_content .function {
+    margin-top: 20px;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -981,21 +996,6 @@ body {
 
   .function .icon {
     margin-bottom: 20px;
-  }
-
-  .section_8_content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .section_8_content .arrow {
-    display: none;
-  }
-
-  .section_8_content .function {
-    margin-top: 20px;
   }
 
   .footer {
