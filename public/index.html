@@ -9,7 +9,7 @@
     <meta charset="utf-8"/>
     <title>Task</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 
     <!-----------------------  CSS ------------------------->
     <link rel="stylesheet" href="font-awesome.css">
@@ -201,6 +201,32 @@
         <div class="section section_8">
             <h3 class="title">Как заказать часы?</h3>
             <div class="section_8_content">
+                <div class="function">
+                    <img class="iconka" src="assets/img/sec5_1.png" alt="">
+                        <h4 class="title">Нажать кнопку</h4>
+                        <p class="descr">«Заказать»
+                            либо можете позвонить сразу: 87758803866</p>
+                </div>
+                <i class="arrow fa fa-arrow-right"></i>
+                <div class="function">
+                    <img class="iconka" src="assets/img/sec5_2.png" alt="">
+                        <h4 class="title">Заполнить форму</h4>
+                        <p class="descr">И нажать на кнопку
+                            "Получить часы"</p>
+                </div>
+                <i class="arrow fa fa-arrow-right"></i>
+
+                <div class="function">
+                    <img class="iconka" src="assets/img/sec5_3.png" alt="">
+                        <h4 class="title">Ожидать звонка</h4>
+                        <p class="descr">Мы свяжемся с Вами в ближайшее время</p>
+                </div>
+                <i class="arrow fa fa-arrow-right"></i>
+                <div class="function">
+                    <img class="iconka" src="assets/img/sec5_4.png" alt="">
+                        <h4 class="title">Получить часы</h4>
+                        <p class="descr">Бесплатная доставка по Алмате</p>
+                </div>
             </div>
         </div>
 
@@ -370,7 +396,7 @@
             console.log("data",data);
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:3000/endpoint',
+                url: 'http://clocklp2.herokuapp.com/endpoint',
                 data: data,
                 success: function(data) {
                     console.log('success');
