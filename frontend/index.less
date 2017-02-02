@@ -137,7 +137,6 @@ body{
   align-items: center;
   font-size: 30px;
   z-index: 9999999;
-
   &:hover,&:active,&:visited,&:focus{
     text-decoration: none;
     color: #ffffff;
@@ -171,7 +170,7 @@ body{
 }
 
 .scroll{
-  .shadow(0px,3px,5px,darken(@blue,10%));
+  .shadow(0px,3px,5px,darken(#838486,10%));
   position: fixed;
   z-index: 99;
   width: 100%;
@@ -219,7 +218,6 @@ body{
 }
 
 .section_2{
-  margin-top: 100px;
   .title{
     color: @blue;
   }
@@ -238,8 +236,9 @@ body{
   text-align: center;
   display: flex;
   flex-direction:column;
-  justify-content:flex-start;
+
   margin:20px 0 20px 5%;
+  margin-top:auto;
   width: 300px;
   .transition;
   &:hover{
@@ -285,6 +284,26 @@ body{
   }
 }
 
+.bye{
+  margin-top: 15px;
+  padding: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  .rounded(3px);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.clock:nth-child(1) .bye{
+  background: #A4D079;
+}
+.clock:nth-child(2) .bye{
+  background: #B2A295;
+}
+.clock:nth-child(3) .bye{
+  background: #F892C2;
+}
 
 
 .section_3{
@@ -337,8 +356,7 @@ body{
 
 
 .section_4{
-  background: #fefefe;
-  margin:70px 0;
+  margin:50px 0;
   &>.title{
     color: @blue;
   }
@@ -418,8 +436,9 @@ body{
 }
 
 .section_6{
+  padding-top: 250px;
   font-size: 16px;
-  background: #eee;
+  background: #fcfcfc;
   color: #444;
   text-align: center;
   .icon{
@@ -443,6 +462,58 @@ body{
   color: @headfoot;
   &_phones{
     display: flex;
+  }
+}
+
+.section_9{
+  color: #ffffff;
+  font-size: 16px;
+  background:url("assets/img/collage.jpg") no-repeat;
+  background-size: cover;
+  padding: 50px;
+  position: relative;
+  text-transform: uppercase;
+  &::after{
+    content: '';
+    background-color:  rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+  &_content{
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+}
+
+.insta{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  &-img{
+    width: 70px;
+  }
+  &-text{
+    font-size: 1.8em;
+  }
+}
+
+.follow{
+  z-index: 10;
+  margin-top: 20px;
+  color: #ffffff;
+  padding: 15px 25px;
+  background: linear-gradient(127deg, rgb(57, 0, 113), rgb(255, 116, 0));
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover{
+    color: #ffffff;
   }
 }
 
@@ -470,7 +541,6 @@ body{
   padding: 0;
   border: 1px solid #888;
   width: 80%;
-  max-width: 400px;
   max-width: 400px;
   min-width: 200px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -627,6 +697,7 @@ body{
 
   .function{
     width: 100%;
+    margin-left: 0;
     flex-direction: column;
     text-align: center;
     font-size: 19px;
@@ -660,6 +731,14 @@ body{
   .main-video{
     width: 300px;
     height: 200px;
+  }
+
+  .section_9_content{
+    font-size: 14px;
+  }
+
+  .insta{
+    display: none;
   }
 }
 /* ------------------  MEDIA END-------------------------------*/

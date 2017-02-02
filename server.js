@@ -58,7 +58,7 @@ app.post('/endpoint',function (req,res) {
 		from: 'childwatchkz@gmail.com', // sender address
 		to: 'almakhan1maksat@gmail.com', // list of receivers
 		subject: 'Часы', // Subject line
-		text: "Пришел заказ на часы от " + req.body.name + ". Номер " + req.body.phone
+		text: "Пришел заказ на часы "+req.body.currentClock+" от " + req.body.name + ". Номер " + req.body.phone
 	};
 
 	transport.sendMail(mailOptions, function (error) {
