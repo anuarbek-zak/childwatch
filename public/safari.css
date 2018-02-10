@@ -1,0 +1,83 @@
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1100px)
+and (orientation : landscape) {
+
+    .section_1{
+        height: 620px;
+    }
+
+    .section_1_bottom{
+        display: block;
+    }
+
+    .main-img{
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        width: 65%;
+    }
+
+    .about{
+        float: right;
+        vertical-align: middle;
+        width: 35%;
+        margin-top: 60px;
+    }
+
+    .section_3_content{
+        margin-left: 50px;
+    }
+
+    .main-video {
+        width: 330px;
+        height: 250px;
+        margin-top: 100px;
+    }
+
+   .section_3_content .function{
+       display: inline-block;
+       width: 25%;
+   }
+    .section_8_content .function{
+       display: inline-block;
+       width: 20%;
+       margin-left: 5%;
+   }
+
+    .section_8_content .function:last-child{
+       margin-left: 0;
+   }
+
+    .clock{
+        width: 30%;
+        margin-left: calc(100%/30);
+    }
+
+    .arrow{
+        display: none;
+    }
+
+    .clock:last-child{
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (max-width: 1537px) and (orientation : portrait) {
+    .section_1_bottom .about{
+        text-align: center;
+        margin-left: 150px;
+    }
+}
+
+@media only screen and (max-width: 669px) and (orientation : portrait) {
+    .section_1_bottom .about{
+        margin-left: 0;
+    }
+
+    .reason img{
+        width: 40px;
+        height: 40px;
+    }
+}

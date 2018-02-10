@@ -13,7 +13,7 @@ var app = express();
 app.use(cors());
 app.use(compression());
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8000);
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 846000 }));
@@ -28,14 +28,14 @@ app.post('/endpoint',function (req,res) {
 	var transport = nodemailer.createTransport(smtpTransport({
 		service: 'gmail',
 		auth: {
-			user: 'childwatchkz@gmail.com',
-			pass: 'childwatchkzsdu'
+			user: 'watchbabykz@gmail.com',
+			pass: 'watchbabykzsdu'
 		}
 	}));
 
 	var mailOptions = {
-		from: 'childwatchkz@gmail.com', // sender address
-		to: 'almakhan1maksat@gmail.com', // list of receivers
+		from: 'watchbabykz@gmail.com', // sender address
+		to: 'watchbaby111@gmail.com', // list of receivers
 		subject: 'Часы', // Subject line
 		text: "Пришел заказ на часы "+req.body.currentClock+" от " + req.body.name + ". Номер " + req.body.phone
 	};
